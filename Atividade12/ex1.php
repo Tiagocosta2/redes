@@ -27,8 +27,8 @@
 		echo $parte;
 		echo "<br>";
 
-		$repetido = str_repeat("0", 5); // Repete 5 vezes o 0
-		echo $repetido; 
+		$repetido = str_repeat("0", 5); // Repete 5 vezes o 0.
+		echo $repetido;
 		echo "<br>";
 
 		$qtd_char = strlen("Linha de Codigo"); // Conta o numero de caracteres da frase
