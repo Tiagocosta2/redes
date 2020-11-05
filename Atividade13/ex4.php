@@ -10,7 +10,7 @@
 
 		if($num % 2 == 0){
      		echo "Verdadeiro";
-		} 
+		}
 		else {
      		echo "Falso";
 		}
