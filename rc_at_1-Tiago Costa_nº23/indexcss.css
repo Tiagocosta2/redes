@@ -1,0 +1,84 @@
+#cabeçalho{
+	width: 99%;
+	height: 100px;
+	background-color:red;
+	border: 1px solid black;
+  color:white;
+  text-align: center;
+  padding: 10px;
+}
+
+#logotipo{
+  width: 150px;
+  height:100px;
+}
+#menu{
+	background-color:red;
+	width: 100%;
+	height: 60px;
+	border: 1px solid black;
+	font-size: 30px;;
+}
+
+
+#h1{
+  text-align: center;
+  color:red;
+  font-size: 40px;;
+}
+#table{
+	width: 100%;
+
+}
+#tr{
+	
+	height: 85px;
+	text-align: center;
+	color:red;
+	font-size: 35px;
+}
+body{
+	background-color: #BDBDBD
+}
+img{
+  width: 90%;
+  height: 100%;
+}
+#rodapé{
+	background-color:red;
+	width: 100%;
+	height:35px;
+	border:1px solid black;
+	color:white;
+	text-align: right;
+	vertical-align:center;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Estilo */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* ao passar o rato */
+.topnav a:hover {
+  background-color: #ddd;
+  color: red;
+}
+h2{
+	text-align:center;
+	font-size: 50px;
+	
+}
+h1{
+	font-size: 40px;
+}

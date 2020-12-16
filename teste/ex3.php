@@ -26,11 +26,7 @@ $menor =$numeros;
 $mult =1;
 $media=0;
 $soma=0;
-
-
-foreach ($numeros as $num) {
-
-
+foreach ($numeros as $num) {	
 	if($num>$maior ) {
 		$maior=$num;
 	}
