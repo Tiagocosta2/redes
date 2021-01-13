@@ -14,19 +14,19 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
 		echo '<script>alert("É obrigatorio o preenchimento do titulo.");</script>';
 	}
 	if(isset($_POST['sinopse'])){
-            $titulo = $_POST['sinopse'];
+            $sinopse = $_POST['sinopse'];
         }
 
         if(isset($_POST['quantidade']) && is_numeric($_POST['quantidade'])){
-            $titulo = $_POST['quantidade'];
+            $quantidade= $_POST['quantidade'];
         }
 
         if(isset($_POST['idioma'])){
-            $titulo = $_POST['idioma'];
+            $idioma = $_POST['idioma'];
         }
 
         if(isset($_POST['data_lancamento'])){
-            $titulo = $_POST['data_lancamento'];
+            $data_lancamento = $_POST['data_lancamento'];
         }
 
         $con = new mysqli("localhost","root","","filmes");
@@ -37,6 +37,7 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
         }
         else{
             $sql = "insert into filmes(titulo,sinopse,idioma,data_lancamento,quantidade) values(?,?,?,?,?);";
+            $stm=$con->prepare($sql);
 
             if($stm!=false){
                 $stm->bind_param("ssssi",$titulo,$sinopse,$idioma,$data_lancamento,$quantidade);
@@ -55,5 +56,5 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
         echo "<h1> Houve um erro ao processar o seu pedido!<br>Irá ser reencaminhado!</h1>";
         header("refresh:5; url=index.php");
     }
-}
+
 ?>
