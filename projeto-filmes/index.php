@@ -26,6 +26,7 @@
                 $stm->close();
             ?>
         <br>
+        <button><a href="filmes_create.php">Adicionar</a></button>
         </body>
         </html>
         <?php 

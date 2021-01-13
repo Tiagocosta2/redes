@@ -74,6 +74,7 @@
 <label>Data lançamento</label><input type="date" name="data_lancamento"><br>
 <input type="submit" name="enviar"><br>
 </form>
+
 </body>
 </html>
 <?php
