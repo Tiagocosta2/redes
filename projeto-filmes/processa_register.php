@@ -3,6 +3,7 @@
     if($_SERVER['REQUEST_METHOD']=="POST"){
         $utilizador = $_POST['user_name'];
         $password = $_POST['password'];
+        $password_encriptada=password_hash($password, PASSWORD_DEFAULT);
         $con = new mysqli("localhost","root","","filmes");
 
         if($con->connect_errno!=0){
@@ -13,18 +14,18 @@
             $sql = "insert into utilizadores(user_name,password) values(?,?)";
             $stm = $con->prepare($sql);
             if($stm!=false){
-                $stm->bind_param("ss",$utilizador,$password);
+                $stm->bind_param("ss",$utilizador,$password_encriptada);
                 $stm->execute();
                 $stm->close();
                 echo '<script>alert("Utilizador adicionado com sucesso");</script>';
-                echo 'Aguarde um momento. A reencaminhar página';
+                echo 'A reencaminhar página';
                 header("refresh:5; url=index.php");
             }
             else{
                 echo($con->error);
-                echo "Aguarde um momento. A reencaminhar página";
+                echo "A reencaminhar página";
                 header("refresh:5;url=index.php");
             }
         }
     }
-?>    
+?>
