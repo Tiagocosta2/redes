@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(!isset($_SESSION['login'])){
+    $_SESSION['login']="incorreto";
+}
+if($_SESSION['login']=="correto" && isset($_SESSION['login'])){
     if($_SERVER['REQUEST_METHOD']=="GET"){
         if(!isset($_GET['filme']) || !is_numeric($_GET['filme'])){
             echo '<script>alert("Erro ao abrir livro");</script>';
@@ -63,6 +68,16 @@
     echo "<br>";
     echo '<a href="filmes_delete.php?filme='.$livro['id_filme'].'">Eleminar</a>'; 
 ?>
+<br>
+<br>
+<button><a href="index.php">Principal</a></button>
 
 </body>
 </html>
+<?php
+    }
+    else{
+    echo 'Para entrar nesta pagina necessita de efetuar <a href="login.php">login</a>';
+    header("refresh:2; url=login.php");
+}
+?>

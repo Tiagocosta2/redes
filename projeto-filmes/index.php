@@ -1,4 +1,5 @@
 <?php 
+session_start();
     $con=new mysqli("localhost","root","","filmes");
     if($con->connect_error!=0){
         echo"Ocorreu um erro ".$con->connect_error;
@@ -26,7 +27,19 @@
                 $stm->close();
             ?>
         <br>
-        <button><a href="filmes_create.php">Adicionar</a></button>
+        <?php
+        if($_SESSION['login']== "correto" && isset($_SESSION['login'])){
+            echo '<button><a href="filmes_create.php">Adicionar</a></button>';
+            echo '<button><a href="users.php">Lista de utilizadores</a></button>';
+            echo '<button><a href="processa_logout.php">Logout</a></button>';
+        }
+        else{
+            echo '<button><a href="login.php">Login</a></button>';
+            echo '<button><a href="register.php">Registar</a></button>';
+            
+        }
+        ?>
+        
         </body>
         </html>
         <?php 

@@ -1,4 +1,16 @@
 <?php
+session_start();
+if(!isset($_SESSION['login'])){
+    $_SESSION['login']="incorreto";
+}
+if($_SESSION['login']=="correto" && isset($_SESSION['login'])){
+
+}
+else{
+    echo 'Para entrar nesta pagina necessita de efetuar <a href="login.php">login</a>';
+    header("refresh:2; url=login.php");
+}
+
 if($_SERVER['REQUEST_METHOD']=="GET"){
 
     if(isset($_GET['filme']) && is_numeric($_GET['filme'])){
