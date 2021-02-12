@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
             $livro = $res->fetch_assoc();
             $stm->close();
         }
-   
+  
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,6 +39,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
  else{
      echo ("<h1>Houve um erro ao processar o seu pedido.<br>Dentro de segundos será reencaminhado!</h1>");
      header("refresh:5; url=index.php");
- }
+    }
 }
 ?>

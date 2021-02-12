@@ -26,15 +26,16 @@ session_start();
                 }
                 $stm->close();
         echo "<br>";
-        $stm = $con->prepare('select * from utilizadores');
-        $stm->execute();
-        $res=$stm->get_result();
-        while($resultado = $res->fetch_assoc()){
-            if($resultado['id'] == $_SESSION['id_user']){
-                echo '<a href="user_edit.php?user='.$resultado['id'].'">Editar User</a><br>';
-            }
-        }
-        $stm->close();
+        echo "<br>";
+                $stm = $con->prepare('select * from utilizadores');
+                $stm->execute();
+                $res=$stm->get_result();
+                 while($resultado = $res->fetch_assoc()){
+                    if($resultado['id'] == $_SESSION['id_user']){
+                        echo '<a href="user_edit.php?utilizadores='.$resultado['id'].'">Editar Utilizador</a><br>';
+                    }
+                }
+
             ?>
         <br>
         <?php

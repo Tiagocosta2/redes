@@ -1,5 +1,5 @@
 <?php
- $idUser=$_GET['utilizadores'];
+ $idUser=$_GET['user'];
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $user = "";
         if(isset($_POST['user_name'])){
@@ -23,7 +23,7 @@
                 $stm->bind_param("si",$user,$idUser);
                 $stm->execute();
                 $stm->close();
-                echo '<script>alert("User alterado com sucesso!!");</script>';
+                echo '<script>alert("Utilizador alterado com sucesso!!");</script>';
                 echo "Aguarde um momento. A reencaminhar página";
                 header("refresh:5; url=index.php");
             }
