@@ -41,6 +41,12 @@ session_start();
         <?php
         if($_SESSION['login']== "correto" && isset($_SESSION['login'])){
             echo '<button><a href="filmes_create.php">Adicionar</a></button>';
+            echo '<br>';
+            echo '<br>';
+            echo '<button><a href="atores.php">Atores</a></button>';            
+            echo '<br>';
+            echo '<br>';
+            echo '<br>';
             echo '<button><a href="users.php">Lista de utilizadores</a></button>';
             echo "<br>";
             echo "<br>";
@@ -49,9 +55,7 @@ session_start();
         }
         else{
             echo '<button><a href="login.php">Login</a></button>';
-            echo '<button><a href="register.php">Registar</a></button>';
-
-            
+            echo '<button><a href="register.php">Registar</a></button>'; 
         }
         ?>
         
