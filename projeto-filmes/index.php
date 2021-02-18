@@ -21,12 +21,14 @@ session_start();
                 while($resultado=$res->fetch_assoc()){
                     echo '<a href="filmes_show.php?filme='.$resultado['id_filme'].'">';
                     echo $resultado['titulo'];
-                    echo'</a>';
                     echo '<br>';
+                    echo'</a>';
+                   
                 }
                 $stm->close();
-        echo "<br>";
-        echo "<br>";
+                echo '<br>';
+                echo '<br>';
+
                 $stm = $con->prepare('select * from utilizadores');
                 $stm->execute();
                 $res=$stm->get_result();
@@ -43,15 +45,10 @@ session_start();
             echo '<button><a href="filmes_create.php">Adicionar</a></button>';
             echo '<br>';
             echo '<br>';
-            echo '<button><a href="atores.php">Atores</a></button>';            
-            echo '<br>';
-            echo '<br>';
-            echo '<br>';
+            echo '<button><a href="atores.php">Atores</a></button>';  
+            echo '<button><a href="realizadores.php">Realizadores</a></button>';          
             echo '<button><a href="users.php">Lista de utilizadores</a></button>';
-            echo "<br>";
-            echo "<br>";
             echo '<button><a href="processa_logout.php">Logout</a></button>';
-
         }
         else{
             echo '<button><a href="login.php">Login</a></button>';

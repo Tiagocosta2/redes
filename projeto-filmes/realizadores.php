@@ -10,16 +10,16 @@ session_start();
         <html>
         <head>
         <meta charset="ISO-8859-1">
-        <title>atores</title>
+        <title>Realizadores</title>
         </head>
         <body>
-        <h1> Lista de atores</h1>
+        <h1> Lista de realizadores</h1>
             <?php
-                $stm=$con->prepare('select * from atores');
+                $stm=$con->prepare('select * from realizadores');
                 $stm->execute();
                 $res=$stm->get_result();
                 while($resultado=$res->fetch_assoc()){
-                    echo '<a href="atores_show.php?ator='.$resultado['id_ator'].'">';
+                    echo '<a href="realizadores_show.php?realizador='.$resultado['id_realizador'].'">';
                     echo $resultado['nome'];
                     echo'</a>';
                     echo '<br>';
@@ -30,11 +30,11 @@ session_start();
 ?>      
 <?php
         if($_SESSION['login']== "correto" && isset($_SESSION['login'])){
-            echo '<button><a href="atores_create.php">Adicionar</a></button>';
+            echo '<button><a href="realizadores_create.php">Adicionar</a></button>';
             echo '<br>';
             echo '<br>';
             echo '<button><a href="index.php">Filmes</a></button>';
-            echo '<button><a href="realizadores.php">Realizadores</a></button>';  
+            echo '<button><a href="atores.php">Atores</a></button>';  
             echo '<button><a href="processa_logout.php">Logout</a></button>';
         }
         else{
