@@ -31,6 +31,7 @@ session_start();
         if($_SESSION['login']== "correto" && isset($_SESSION['login'])){
             echo '<button><a href="atores_create.php">Adicionar</a></button>';
             echo '<br>';
+            echo '<button><a href="index.php">Filmes</a></button>';
             echo '<br>';
             echo '<button><a href="processa_logout.php">Logout</a></button>';
             echo '<br>';
