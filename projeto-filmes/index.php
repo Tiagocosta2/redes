@@ -41,7 +41,13 @@ session_start();
             ?>
         <br>
         <?php
-        if($_SESSION['login']== "correto" && isset($_SESSION['login'])){
+        $erro=0;
+         if(!empty($_SESSION['login'])){  
+            if($_SESSION['login']== "correto" && isset($_SESSION['login'])){
+                $erro=1;
+            }
+         }
+         if($erro==1){
             echo '<button><a href="filmes_create.php">Adicionar</a></button>';
             echo '<br>';
             echo '<br>';
@@ -49,8 +55,9 @@ session_start();
             echo '<button><a href="realizadores.php">Realizadores</a></button>';          
             echo '<button><a href="users.php">Lista de utilizadores</a></button>';
             echo '<button><a href="processa_logout.php">Logout</a></button>';
-        }
+         }
         else{
+            
             echo '<button><a href="login.php">Login</a></button>';
             echo '<button><a href="register.php">Registar</a></button>'; 
         }
