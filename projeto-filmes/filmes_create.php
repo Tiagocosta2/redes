@@ -1,4 +1,5 @@
 <?php
+    include "css.php";
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $titulo="";
         $sinopse="";
@@ -65,16 +66,22 @@
 <title>Adicionar filmes</title>
 </head>
 <body>
-<h1>Adicionar filmes</h1>
+<h1 align="center">Adicionar filmes</h1>
+<br>
+<div class="container-fluid">
 <form action="filmes_create.php" method="post">
-<label>Titulo</label><input type="text" name="titulo" required><br>
-<label>Sinopse</label><input type="text" name="sinopse"><br>
-<label>Quantidade</label><input type="text" name="quantidade"><br>
-<label>Idioma</label><input type="numeric" name="idioma"><br>
-<label>Data lançamento</label><input type="date" name="data_lancamento"><br>
+<label>Titulo:</label><input type="text" name="titulo" required><br>
+<br>
+<label>Sinopse:</label><input type="text" name="sinopse"><br>
+<br>
+<label>Quantidade:</label><input type="text" name="quantidade"><br>
+<br>
+<label>Idioma:</label><input type="numeric" name="idioma"><br>
+<br>
+<label>Data lançamento:</label><input type="date" name="data_lancamento"><br>
 <input type="submit" name="enviar"><br>
 </form>
-
+</div>
 </body>
 </html>
 <?php

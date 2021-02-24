@@ -46,7 +46,7 @@ if($_SESSION['login']=="correto" && isset($_SESSION['login'])){
 <title>Detalhes</title>
 </head>
 <body>
-<h1>Detalhes do realizador</h1>
+<h1 align="center">Detalhes do realizador</h1>
 <?php
     if(isset($livro)){
         echo '<br>';

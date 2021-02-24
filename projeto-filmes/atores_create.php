@@ -1,4 +1,5 @@
 <?php
+include "css.php";
         if($_SERVER['REQUEST_METHOD']=="POST"){
             $nome="";
             $nacionalidade="";
@@ -55,13 +56,15 @@
     <title>Adicionar Atores</title>
     </head>
     <body>
-    <h1>Adicionar Atores</h1>
+    <h1 align="center">Adicionar Atores</h1>
     <form action="atores_create.php" method="post">
-    <label>Nome</label><input type="text" name="nome" required><br>
-    <label>Nacionalidade</label><input type="text" name="nacionalidade"><br>
-    <label>Data Nascimento</label><input type="date" name="data_nascimento"><br>
+    <div class="container-fluid">    
+    <label>Nome</label><input type="text" name="nome" required><br><br>
+    <label>Nacionalidade</label><input type="text" name="nacionalidade"><br><br>
+    <label>Data Nascimento</label><input type="date" name="data_nascimento"><br><br>
     <input type="submit" name="enviar"><br>
     </form>
+    </div>
     </body>
     </html>
     <?php

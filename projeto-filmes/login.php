@@ -1,3 +1,7 @@
+<?php
+include "css.php";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,11 +9,14 @@
 	<title>Login</title>
 </head>
 <body>
-	<h1>Login</h1>
+
+	<h1 align="center">Login</h1>
 	<form method="post" action="processa_login.php">
-	<label>Nome de utilizador</label><input type="text" name="user_name" required><br>
-	<label>Palavra-passe</label><input type="text" name="password" required><br>
+	<div class="container-fluid">
+	<label>Nome de utilizador</label><input type="text" name="user_name" required><br><br>
+	<label>Palavra-passe</label><input type="text" name="password" required><br><br>
 	<input type="submit" name="login"><br>		
 	</form>
+</div>
 </body>
 </html>

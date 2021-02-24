@@ -13,7 +13,7 @@
             <title>Filmes</title>
         </head>
         <body>
-            <h1>Lista de Utilizadores</h1>
+            <h1 align="center">Lista de Utilizadores</h1>
             <?php
                 $stm = $con->prepare('select * from utilizadores');
                 $stm->execute();

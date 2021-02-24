@@ -1,4 +1,5 @@
 <?php 
+include "css.php";
 session_start();
     $con=new mysqli("localhost","root","","filmes");
     if($con->connect_error!=0){
@@ -13,7 +14,7 @@ session_start();
         <title>Realizadores</title>
         </head>
         <body>
-        <h1> Lista de realizadores</h1>
+        <h1 align="center"> Lista de realizadores</h1>
             <?php
                 $stm=$con->prepare('select * from realizadores');
                 $stm->execute();
@@ -30,16 +31,16 @@ session_start();
 ?>      
 <?php
         if($_SESSION['login']== "correto" && isset($_SESSION['login'])){
-            echo '<button><a href="realizadores_create.php">Adicionar</a></button>';
+            echo '<button type="button" class="btn btn-outline-success"><a href="realizadores_create.php">Adicionar</a></button>';
             echo '<br>';
             echo '<br>';
-            echo '<button><a href="index.php">Filmes</a></button>';
-            echo '<button><a href="atores.php">Atores</a></button>';  
-            echo '<button><a href="processa_logout.php">Logout</a></button>';
+            echo '<button type="button" class="btn btn-outline-primary"><a href="index.php">Filmes</a></button>';
+            echo '<button type="button" class="btn btn-outline-primary"><a href="atores.php">Atores</a></button>';  
+            echo '<button type="button" class="btn btn-outline-danger"><a href="processa_logout.php">Logout</a></button>';
         }
         else{
-            echo '<button><a href="login.php">Login</a></button>';
-            echo '<button><a href="register.php">Registar</a></button>'; 
+            echo '<button type="button" class="btn btn-outline-danger"><a href="login.php">Login</a></button>';
+            echo '<button type="button" class="btn btn-outline-danger"><a href="register.php">Registar</a></button>'; 
         }
         ?>
         

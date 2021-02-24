@@ -1,4 +1,5 @@
 <?php
+include "css.php";
 session_start();
 if(!isset($_SESSION['login'])){
     $_SESSION['login']="incorreto";
@@ -37,16 +38,18 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <tile>Editar realizador</title>
+    <tile></title>
 </head>
 <body>
-    <h1>Editar realizador</h1>
+    <h1 align="center">Editar realizador</h1>
     <form action="realizadores_update.php?realizador=<?php echo $livro['id_realizador']; ?>" method="post">
-     <label>Nome</label><input type="text" name="nome" required value="<?php echo $livro['nome'];?>"><br>
-        <label>nacionalidade</label><input type="text" name="nacionalidade" required value="<?php echo $livro['nacionalidade'];?>"><br>
-        <label>Data_Nascimento</label><input type="date" name="data_nascimento" required value="<?php echo $livro['data_nascimento'];?>"><br>
+        <div class="container-fluid">
+     <label>Nome</label><input type="text" name="nome" required value="<?php echo $livro['nome'];?>"><br><br>
+        <label>nacionalidade</label><input type="text" name="nacionalidade" required value="<?php echo $livro['nacionalidade'];?>"><br><br>
+        <label>Data_Nascimento</label><input type="date" name="data_nascimento" required value="<?php echo $livro['data_nascimento'];?>"><br><br>
         <input type="submit" name="enviar"><br>
     </form>
+</div>
 </body>
 <?php
  }
