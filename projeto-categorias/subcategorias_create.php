@@ -1,20 +1,19 @@
 <?php
     include "css.php";
     if($_SERVER['REQUEST_METHOD']=='POST'){
-        $categoria="";
-        $sinopse="";
+        $idcategoria="";
+        $subcategoria="";
         $numero=0;
     
+        if(isset($_POST['id_categoria']) && is_numeric($_POST['id_categoria'])){
+            $idcategoria = $_POST['id_categoria'];
+        }
 
-        if(isset($_POST['categoria'])){
-            $categoria = $_POST['categoria'];
+        if(isset($_POST['subcategoria'])){
+            $subcategoria = $_POST['subcategoria'];
         }
         else{
-            echo '<script>alert("É obrigatório o preenchimento da categoria.");</script>';
-        }
-
-        if(isset($_POST['sinopse'])){
-            $sinopse = $_POST['sinopse'];
+            echo '<script>alert("É obrigatório o preenchimento da subcategoria.");</script>';
         }
 
         if(isset($_POST['numero']) && is_numeric($_POST['numero'])){
@@ -29,21 +28,21 @@
         }
 
         else{
-            $sql = 'insert into categorias(categoria,sinopse,numero) values(?,?,?)';
+            $sql = 'insert into  subcategorias(id_categoria,subcategoria,numero) values(?,?,?)';
             $stm = $con->prepare($sql);
             if($stm!=false){
-                $stm->bind_param('ssi',$categoria,$sinopse,$numero);
+                $stm->bind_param('isi',$idcategoria,$subcategoria,$numero);
                 $stm->execute();
                 $stm->close();
                 
-                echo '<script>alert("Categoria adicionada com sucesso");</script>';
+                echo '<script>alert("SubCategoria adicionada com sucesso");</script>';
                 echo 'Aguarde um momento. A reencaminhar página';
-                header("refresh:5; url=index.php");
+                header("refresh:5; url=subcategorias.php");
             }
             else{
                 echo($con->error);
                 echo "Aguarde um momento. A reencaminhar página";
-                header("refresh:5;url=index.php");
+                header("refresh:5;url=subcategorias.php");
             }
         }
     }
@@ -53,16 +52,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Adicionar categoria</title>
+<title>Adicionar SubCategoria</title>
 </head>
 <body>
-<h1 align="center">Adicionar filmes</h1>
+<h1 align="center">Adicionar subcategoria</h1>
 <br>
-<form action="categorias_create.php" method="post">
-<label>Categoria:</label><input type="text" name="categoria" required><br>
-<br>
-<label>Sinopse:</label><input type="text" name="sinopse"><br>
-<br>
+<form action="subcategorias_create.php" method="post">
+<label>ID Categoria:</label><input type="is_numeric" name="id_categoria" required=""><br><br>
+<label>SubCategoria:</label><input type="text" name="subcategoria" required><br><br>
 <label>Numero:</label><input type="is_numeric" name="numero"><br>
 <input type="submit" name="enviar"><br>
 </form>
