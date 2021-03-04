@@ -11,17 +11,17 @@ session_start();
         <html>
         <head>
         <meta charset="ISO-8859-1">
-        <title>SubCategorias</title>
+        <title>Produtos</title>
         </head>
         <body>
-        <h1 align="center"> Lista de SubCategorias</h1>
+        <h1 align="center"> Lista de Produtos</h1>
             <?php
-                $stm=$con->prepare('select * from subcategorias');
+                $stm=$con->prepare('select * from produtos');
                 $stm->execute();
                 $res=$stm->get_result();
                 while($resultado=$res->fetch_assoc()){
-                    echo '<a href="subcategorias_show.php?subcategoria='.$resultado['id'].'">';
-                    echo $resultado['subcategoria'];
+                    echo '<a href="produtos_show.php?produto='.$resultado['id'].'">';
+                    echo $resultado['nome'];
                     echo'</a>';
                     echo '<br>';
                 }
@@ -31,7 +31,7 @@ session_start();
 ?>      
 <?php
         if($_SESSION['login']== "correto" && isset($_SESSION['login'])){
-            echo '<button><a href="subcategorias_create.php">Adicionar</a></button>';
+            echo '<button><a href="produtos_create.php">Adicionar</a></button>';
             echo '<br>';
             echo '<br>';
             echo '<button><a href="index.php">Categorias</a></button>';

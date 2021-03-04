@@ -1,4 +1,5 @@
 <?php
+include "css.php";
 session_start();
 $con=new mysqli("localhost","root","","categorias");
 if($con->connect_error!=0){
@@ -13,7 +14,11 @@ if($con->connect_error!=0){
         <title>Categorias</title>
         </head>
         <body>
+        <div class="jumbotron">
+            <div class="container">
         <h1 align="center"> Lista de Categorias</h1>
+        </div>
+        </div>
             <?php
                 $stm=$con->prepare('select * from categorias');
                 $stm->execute();
@@ -52,7 +57,8 @@ if($con->connect_error!=0){
             echo '<button><a href="categorias_create.php">Adicionar</a></button>';
             echo '<br>';
             echo '<br>';
-            echo '<button><a href="subcategorias.php">SubCategorias</a></button>';            
+            echo '<button><a href="subcategorias.php">SubCategorias</a></button>'; 
+            echo '<button><a href="produtos.php">Produtos</a></button>';           
             echo '<button><a href="users.php">Lista de utilizadores</a></button>';
             echo '<button><a href="processa_logout.php">Logout</a></button>';
          }
