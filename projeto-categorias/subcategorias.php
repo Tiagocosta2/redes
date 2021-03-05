@@ -14,14 +14,18 @@ session_start();
         <title>SubCategorias</title>
         </head>
         <body>
+             <div class="jumbotron">
+            <div class="container">
         <h1 align="center"> Lista de SubCategorias</h1>
+         </div>
+        </div>
             <?php
                 $stm=$con->prepare('select * from subcategorias');
                 $stm->execute();
                 $res=$stm->get_result();
                 while($resultado=$res->fetch_assoc()){
                     echo '<a href="subcategorias_show.php?subcategoria='.$resultado['id'].'">';
-                    echo $resultado['subcategoria'];
+                    echo "Nome :"." ".$resultado['subcategoria'];
                     echo'</a>';
                     echo '<br>';
                 }

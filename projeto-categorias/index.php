@@ -25,7 +25,7 @@ if($con->connect_error!=0){
                 $res=$stm->get_result();
                 while($resultado=$res->fetch_assoc()){
                     echo '<a href="categorias_show.php?categoria='.$resultado['id'].'">';
-                    echo $resultado['categoria'];
+                    echo "Nome :"." ". $resultado['categoria'];
                     echo '<br>';
                     echo'</a>';
                    

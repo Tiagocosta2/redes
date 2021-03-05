@@ -1,4 +1,5 @@
 <?php
+include "css.php";
 session_start();
 if(!isset($_SESSION['login'])){
     $_SESSION['login']="incorreto";
@@ -46,15 +47,19 @@ if($_SESSION['login']=="correto" && isset($_SESSION['login'])){
 <title>Detalhes</title>
 </head>
 <body>
+    <div class="jumbotron">
+            <div class="container">
 <h1 align="center">Detalhes da categoria</h1>
+</div>
+</div>
 <?php
     if(isset($categoria)){
         echo '<br>';
-        echo $categoria['categoria'];
+        echo"Nome da categoria:"." ". $categoria['categoria'];
         echo '<br>';
-        echo $categoria['sinopse'];
+        echo "sinopse:"." ".$categoria['sinopse'];
         echo '<br>';
-        echo $categoria['numero'];
+        echo "Numero:"." ". $categoria['numero'];
         echo '<br>';
     }
     else{
