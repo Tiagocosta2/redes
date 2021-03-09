@@ -56,7 +56,7 @@
 <title>Adicionar categoria</title>
 </head>
 <body>
-<h1 align="center">Adicionar filmes</h1>
+<h1 align="center">Adicionar categorias</h1>
 <br>
 <form action="categorias_create.php" method="post">
 <label>Categoria:</label><input type="text" name="categoria" required><br>

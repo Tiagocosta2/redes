@@ -14,6 +14,7 @@ if($con->connect_error!=0){
         <title>Categorias</title>
         </head>
         <body>
+
         <div class="jumbotron">
             <div class="container">
         <h1 align="center"> Lista de Categorias</h1>
