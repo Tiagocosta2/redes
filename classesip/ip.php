@@ -1,5 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body style="background-color:#d9d9d9;" >
 <?php
-
+include "css.php";
 
 $n1=$_GET['n1'];
 $n2=$_GET['n2'];
@@ -87,3 +93,5 @@ else{
 
 
 ?>
+</body>
+</html>
