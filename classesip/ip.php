@@ -83,8 +83,11 @@ elseif($n3==0 && $n4==0){
 elseif($n4==0 && $n4==255){
 	echo "IP Invalido";
 }
-else{
+elseif($n1<255 || $n2<255 || $n3<255 || $n4<255){
 	echo "IP publico";
+}
+else{
+	echo "IP Invalido";
 }
 
 
