@@ -15,8 +15,7 @@ $n4=$_GET['n4'];
 //Classes 
 	if($n1==127){
 		echo "Endereço reservado a loopback ou localhost";
-		echo "<br>";
-		echo "IP Reservado e Invalido";
+
 	}
 	elseif($n1>=1 && $n1<=126 && $n2<=255 && $n3<=255 && $n4<=254){
 		echo "Classe A";
@@ -51,7 +50,7 @@ elseif($n1==192 && $n2==168 && ($n3>0 && $n3<=255)){
 	echo "IP Privado";
 }
 elseif($n1==0){
-	echo "IP reservado e Invalido";
+	echo "IP reservado ";
 }
 elseif($n1==128 && $n2==0){
 	echo "IP Reservado";
@@ -83,18 +82,12 @@ elseif($n3==0 && $n4==0){
 elseif($n4==0 && $n4==255){
 	echo "IP Invalido";
 }
-elseif($n1<255 || $n2<255 || $n3<255 || $n4<255){
-	echo "IP publico";
+elseif($n1<255 && $n2<255 && $n3<255 && $n4<255 && $n1!=127){
+	echo "IP Publico";
 }
 else{
 	echo "IP Invalido";
 }
-
-
-
-
-
-
 ?>
 </body>
 </html>
